@@ -1,5 +1,3 @@
-package com.mycompany.jogo;
-
 public class Personagem {
     String nome;
     int energia, fome, sono;
