@@ -1,5 +1,3 @@
-package com.mycompany.jogo;
-
 public class Jogo {
     public static void main(String[] args) {
         Personagem cacador = new Personagem();
