@@ -1,0 +1,76 @@
+package com.mycompany.testeestoqueeletronicos;
+
+import javax.swing.JOptionPane;
+
+
+public class TesteEstoqueEletronicos {
+
+    public static void main(String[] args) {
+        
+        // 3.1
+        Eletronico celular = new Eletronico(
+                "Celular Samsung", 15, 1500);
+        Eletronico televisao = new Eletronico(
+                "Televisao Tubo", 8, 1900);
+        
+        //3.2
+        String nome1 =
+           JOptionPane.showInputDialog(
+            "Digite o nome do primeiro objeto:");
+        int quantidade1 = Integer.parseInt(
+          JOptionPane.showInputDialog(
+            "Digite a quantidade do primeiro objeto:"
+          )
+        );
+        double preco1 = Double.parseDouble(
+          JOptionPane.showInputDialog(
+            "Digite o preco do primeiro objeto:"
+          ) 
+        );
+        String nome2 =
+           JOptionPane.showInputDialog(
+            "Digite o nome do segundo objeto:");
+        int quantidade2 = Integer.parseInt(
+          JOptionPane.showInputDialog(
+            "Digite a quantidade do segundo objeto:"
+          )
+        );
+        double preco2 = Double.parseDouble(
+          JOptionPane.showInputDialog(
+            "Digite o preco do segundo objeto:"
+          ) 
+        );
+        
+        celular.setNome(nome1);
+        celular.setQuantidade(quantidade1);
+        celular.setPreco(preco1);
+        
+        televisao.setNome(nome2);
+        televisao.setQuantidade(quantidade2);
+        televisao.setPreco(preco2);
+        
+        // 3.3
+        JOptionPane.showMessageDialog(null, 
+           "Nome: " + celular.getNome() + 
+           "\n Quantidade: " + celular.getQuantidade() +
+           "\n Preco: " + celular.getPreco());
+        
+        JOptionPane.showMessageDialog(null, 
+           "Nome: " + televisao.getNome() + 
+           "\n Quantidade: " + televisao.getQuantidade() +
+           "\n Preco: " + televisao.getPreco());
+        
+        //3.4
+        celular.aumentarEstoque(10);
+        JOptionPane.showMessageDialog(null,
+         "Quantidade atualizada: " + 
+                 celular.getQuantidade());   
+        //3.5
+        televisao.removerEstoque(3);
+         JOptionPane.showMessageDialog(null,
+         "Quantidade atualizada: " + 
+                 televisao.getQuantidade());
+        //3.6
+        celular.verificarDisponibilidade(20);   
+    }
+}

@@ -1,0 +1,66 @@
+package com.mycompany.testeestoqueeletronicos;
+
+import javax.swing.JOptionPane;
+
+
+public class Eletronico {
+    // delcaração de atributos
+    private String nome;
+    private int quantidade;
+    private double preco;
+    
+    // delcaração dos métodos
+    //getters 
+    //- retorna o valor atual de um atributo
+    public String getNome(){
+        return nome;
+    }
+    public int getQuantidade(){
+        return quantidade;
+    }
+    public double getPreco(){
+        return preco;
+    }
+    // setters
+    // - recebe um valor por parâmetro e 
+    // atribui esse novo valor ao atributo
+    public void setNome(String novoNome){
+        nome = novoNome;
+    }
+    public void setQuantidade(int novaQuantidade){
+        quantidade = novaQuantidade;
+    }
+    public void setPreco(double novoPreco){
+        preco = novoPreco;
+    }
+    public void aumentarEstoque(int acrescimo){
+        quantidade = quantidade + acrescimo;
+    }
+    public void removerEstoque(int decrescimo){
+        if(quantidade >= decrescimo){
+            quantidade = quantidade - decrescimo;
+        }else{ // quantidade < decrescimo
+            JOptionPane.showMessageDialog(null,
+              "Quantidade em estoque insuficiente.");
+        }
+    }
+    public void verificarDisponibilidade(
+     int demanda){
+        if(quantidade >= demanda){
+            JOptionPane.showMessageDialog(null,
+            "Temos estoque suficiente para " +
+            "suprir essa demanda.");
+        }else{ // quantidade < demanda
+            JOptionPane.showMessageDialog(null,
+            "Estoque insuficiente!!");
+        }      
+    }
+    
+    public Eletronico(String nomeInicial, 
+            int quantidadeInicial,
+            double precoInicial){
+        nome = nomeInicial;
+        quantidade = quantidadeInicial;
+        preco = precoInicial;       
+    }
+}

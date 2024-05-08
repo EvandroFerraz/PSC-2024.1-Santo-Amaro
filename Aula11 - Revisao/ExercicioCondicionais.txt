@@ -1,0 +1,45 @@
+package com.mycompany.exerciciocondicionais;
+
+import javax.swing.JOptionPane;
+
+public class ExercicioCondicionais {
+
+    public static void main(String[] args) {
+        String letra;
+        double nota1, nota2, nota3;
+        
+        nota1 = Double.parseDouble(
+              JOptionPane.showInputDialog(
+                "Digite a nota1: ")
+        ); 
+        nota2 = Double.parseDouble(
+              JOptionPane.showInputDialog(
+                "Digite a nota2: ")
+        );
+        nota3 = Double.parseDouble(
+              JOptionPane.showInputDialog(
+                "Digite a nota3: ")
+        );
+        letra = JOptionPane.showInputDialog(
+            "Escolha a média:\nA- Aritmética\n" +
+            "B- Ponderada");
+        
+        double resultado;
+        if(letra.equals("A")){
+            // media aritmética
+            resultado = (nota1 + nota2 + nota3) / 3;
+            JOptionPane.showMessageDialog(null,
+              "Média Aritmética: " + resultado);
+        }else if(letra.equals("B")){
+            // media ponderada
+            resultado = (nota1*5 + nota2*3 
+                    + nota3*2)/10;
+            JOptionPane.showMessageDialog(null,
+              "Média Ponderada: " + resultado);
+        }else{
+            // letra inválida
+            JOptionPane.showMessageDialog(null,
+            "Escolha uma letra válida: A ou B");
+        }
+    }
+}

@@ -1,0 +1,42 @@
+package com.mycompany.exerciciorepeticao;
+
+import javax.swing.JOptionPane;
+
+public class ExercicioRepeticao {
+
+    public static void main(String[] args) {
+        int n = Integer.parseInt(            
+        JOptionPane.showInputDialog(
+           "Digite o número para tabuada " +
+           "(0 - Sair): "
+        ));
+        
+        while(n != 0){
+            String tabuada = "";
+            // calculo da tabuada
+            for(int i = 1; i <= 10; i++){
+                tabuada = tabuada + n + " X " +
+                i + " = " + (n*i) + "\n";
+                // n = 5
+                // 1 iteração, i = 1, 5 X 1 = 5
+                // 2 iteração, i = 2, 5 X 2 = 10
+                // 3 iteração, i = 3, 5 X 3 = 15
+                // 4 iteração, i = 4, 5 X 4 = 20
+                // 5 iteração, i = 5, 5 X 5 = 25
+                // 6 iteração, i = 6, 5 X 6 = 30
+                // 7 iteração, i = 7, 5 X 7 = 35
+                // 8 iteração, i = 8, 5 X 8 = 40
+                // 9 iteração, i = 9, 5 X 9 = 45
+                // 10 iteração, i = 10, 5 X 10 = 50
+                // 11 iteração, i = 11, quebra o laço
+            }
+            JOptionPane.showMessageDialog(null,
+            tabuada);
+            n = Integer.parseInt(            
+             JOptionPane.showInputDialog(
+             "Digite o número para tabuada " +
+             "(0 - Sair): "
+        ));
+        }         
+    }
+}
